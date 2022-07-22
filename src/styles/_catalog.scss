@@ -1,22 +1,43 @@
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
-
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 944px;
   margin: 0 auto;
 
   &__card {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     width: 200px;
     height: 300px;
+    gap: 48px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 48px;
   }
+}
 
-  &__card:not(:nth-child(4n)) {
-    margin-right: 48px;
+@media(max-width: 488px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(min-width: 489px) and (max-width: 768px) {
+  .catalog {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(min-width: 769px) and (max-width: 1024px) {
+  .catalog {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(min-width: 1024px) {
+  .catalog {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
